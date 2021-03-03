@@ -1,0 +1,46 @@
+@import "../../styles/varibles";
+
+.music-song-card {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: $orange;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 0 7px $black;
+
+  &__artwork {
+    width: 280px;
+    height: 280px;
+    background-size: contain;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 17px;
+    width: 280px;
+    box-sizing: border-box;
+
+    &__header {
+      width: 65%;
+    }
+    &__title {
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 2px 0;
+      color: $black;
+    }
+    &__subtitle {
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 2px 0;
+      font-size: small;
+      color: $lightBlack;
+    }
+  }
+}

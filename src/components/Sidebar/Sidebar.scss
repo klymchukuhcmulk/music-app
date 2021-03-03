@@ -1,0 +1,49 @@
+@import "../../styles/varibles";
+
+.music-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $sidebarWidth;
+  background-color: $grey;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: $boxShadow;
+
+  &__routes {
+    height: 100%;
+    overflow: auto;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      margin: 3px;
+      border-radius: 5px;
+      color: $darkWhite;
+      user-select: none;
+
+      &:hover {
+        background-color: $lightGrey;
+      }
+      &-icon {
+        width: 20%;
+        text-align: center;
+      }
+      &-title {
+        width: 80%;
+      }
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: 15px;
+
+    h1 {
+      font-weight: 400;
+      font-size: 40px;
+      color: $titleColor;
+    }
+  }
+}

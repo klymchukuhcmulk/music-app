@@ -1,0 +1,12 @@
+@import "varibles";
+
+body {
+  font-family: $fontFamily;
+  background-color: $darkGrey;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}

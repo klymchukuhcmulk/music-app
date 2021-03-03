@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import store from './store'
 
+import 'reset-css'
+import './styles/main.scss'
+
 const app = (
   <Provider store={store}>
     <App />

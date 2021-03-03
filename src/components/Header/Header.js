@@ -1,9 +1,12 @@
+import './Header.scss'
 
 const Header = () => {
   return (
-    <div>
+    <header className="music-header">
+      <section className="music-header__info">
 
-    </div>
+      </section>
+    </header>
   )
 }
 

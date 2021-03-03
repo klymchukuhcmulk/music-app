@@ -1,12 +1,9 @@
 import axios from 'axios'
-
-const apiKey = 'cf892ec840mshbebbed8b9d5e796p1dc3fajsn42bd5bf6a740'
-const host = 'shazam.p.rapidapi.com'
-const resource = `https://${host}/`
+import shazamConfig from '../config/shazam.config'
 
 axios.interceptors.request.use((config) => {
-  config.headers['x-rapidapi-key'] = apiKey
-  config.headers['x-rapidapi-host'] = host
+  config.headers['x-rapidapi-key'] = shazamConfig.apiKey
+  config.headers['x-rapidapi-host'] = shazamConfig.host
   config.headers['useQueryString'] = true
   return config
 })
@@ -15,7 +12,27 @@ class MusicModel {
   getCharts () {
     return axios({
       method: 'GET',
-      url: `${resource}charts/track`
+      url: `${shazamConfig.resource}charts/track`
+    })
+  }
+  search ({ term, limit = 5, offset = 0}) {
+    return axios({
+      method: 'GET',
+      url: `${shazamConfig.resource}search`,
+      params: {
+        term,
+        limit,
+        offset
+      }
+    })
+  }
+  helpSearch ({ term }) {
+    return axios({
+      method: 'GET',
+      url: `${shazamConfig.resource}auto-complete`,
+      params: {
+        term
+      }
     })
   }
 }

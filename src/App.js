@@ -5,20 +5,25 @@ import {
 } from 'react-router-dom'
 import routes from './router'
 import RouterView from './router/RouterView'
+import Sidebar from './components/Sidebar/Sidebar'
 
+import './styles/App.scss'
 
 function App () {
   return (
     <Router>
       <Header />
-      <Switch>
-        {routes.map((route, i) => (
-          <RouterView
-            key={i}
-            {...route}
-          />
-        ))}
-      </Switch>
+      <Sidebar />
+      <main className="music-main">
+        <Switch>
+          {routes.map((route, i) => (
+            <RouterView
+              key={i}
+              {...route}
+            />
+          ))}
+        </Switch>
+      </main>
     </Router>
   )
 }
